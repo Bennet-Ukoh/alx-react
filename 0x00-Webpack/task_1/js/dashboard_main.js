@@ -14,7 +14,7 @@ $(document).ready(function() {
     countParagraph.text(`${count} clicks on the button`);
   }
 
-  button.click(debounce(updateCounter, 300));
+  button.click(debounce(updateCounter, 500));
 
   $('body').append(holbertonDashboardParagraph);
   $('body').append(dashboardDataParagraph);
