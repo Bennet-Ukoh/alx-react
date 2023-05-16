@@ -2,7 +2,7 @@
   "name": "task_2",
   "version": "1.0.0",
   "description": "",
-  "main": "js/dashboard_main.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -13,12 +13,12 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "image-webpack-loader": "^8.1.0",
     "style-loader": "^3.3.2",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
-    "image-webpack-loader": "^8.1.0",
     "jquery": "^3.7.0",
     "lodash": "^4.17.21"
   }

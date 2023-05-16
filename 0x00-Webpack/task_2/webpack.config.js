@@ -1,12 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: 'js/dashboard_main.js',
+  mode: 'production',
+  entry: './js/dashboard_main.js',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
-  mode: 'production',
   module: {
     rules: [
       {
@@ -14,8 +14,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name].[ext]',
+        },
+        include: [
+          path.resolve(__dirname, 'task_2/assets/holberton-logo.jpg'),
+        ],
       },
     ],
   },
