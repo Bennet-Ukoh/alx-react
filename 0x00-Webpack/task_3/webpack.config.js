@@ -5,9 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    header: './task_3/modules/header/header.js',
-    body: './task_3/modules/body/body.js',
-    footer: './task_3/modules/footer/footer.js',
+    header: './modules/header/header.js',
+    body: './modules/body/body.js',
+    footer: './modules/footer/footer.js',
   },
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -37,7 +37,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './task_3/index.html',
+      template: path.resolve(__dirname, 'public', 'index.html'),
       filename: 'index.html',
       title: 'Holberton Dashboard',
     }),
