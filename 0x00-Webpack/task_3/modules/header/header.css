@@ -1,0 +1,14 @@
+/* Header styles */
+header {
+  background-color: #FFA500;
+  padding: 20px;
+  text-align: center;
+}
+
+header img {
+  max-height: 50px;
+}
+
+header h1 {
+  font-size: 36px;
+}
