@@ -14,7 +14,11 @@
 .App-body {
   margin-top: 40px;
   padding-left: 30px;
-  font-size: small;
+  font-size: medium;
+}
+
+input {
+  margin: 8px;
 }
 
 .logo {
