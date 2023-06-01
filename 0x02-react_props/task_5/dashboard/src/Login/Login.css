@@ -1,0 +1,11 @@
+.App-body {
+    margin-top: 40px;
+    padding-left: 30px;
+    font-size: medium;
+    border-top: 2px solid rgb(231, 40, 40);
+  }
+  
+  input {
+    margin: 8px;
+  }
+  
