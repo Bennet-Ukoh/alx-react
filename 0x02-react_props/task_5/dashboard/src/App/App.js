@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../src/Header/Header";
 import Notifications from '../Notifications/Notifications'
+import Login from "../Login/Login";
 import Footer from "../../src/Footer/Footer";
 import PropTypes from 'prop-types';
 import CourseList from "../CourseList/CourseList";
@@ -24,13 +25,12 @@ function App( { isLoggedIn } ) {
 
     return (
       <>
-        <Notifications displayDrawer={isLoggedIn} listNotifications={[]} />
-        <div className="App">
+      <div className="App">
+          <Notifications displayDrawer={isLoggedIn} listNotifications={listNotifications}/>
+        
           <Header />
-          <div >
-            {/* Pass the listCourses prop to CourseList component */}
-            <CourseList listCourses={listCourses}/>
-          </div>
+            {isLoggedIn ? <CourseList listCourses={listCourses}/> : <Login />}
+          
           <div className="App-footer">
             <Footer />
           </div>

@@ -14,7 +14,7 @@ describe('App', () => {
   });
 
   it('renders the Notifications component', () => {
-    expect(wrapper.contains(<Notifications />)).toBe(true);
+    expect(wrapper.find(Notifications)).toHaveLength(1);
   });
 
   it('renders the Header component', () => {

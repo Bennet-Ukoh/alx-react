@@ -17,7 +17,7 @@ describe('NotificationItem', () => {
 
   it('renders the correct html based on the html prop', () => {
     const htmlProp = { __html: '<u>test</u>' };
-    const wrapper = shallow(<NotificationItem html={htmlProp} value="New course available" />);
+    const wrapper = shallow(<NotificationItem html={htmlProp} />);
     expect(wrapper.find('li').prop('dangerouslySetInnerHTML')).toEqual(htmlProp);
   });
   
