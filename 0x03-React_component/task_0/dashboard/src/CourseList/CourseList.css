@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+thead .centered {
+    text-align: center;
+  }
+
+  th{
+    
+    border-bottom: 2px solid #ccc;
+    text-align: left;
+  }
+
+ 
+
