@@ -6,9 +6,8 @@ const CourseList = () => {
     return (
         <table id="CourseList">
             <thead>
-                
-                <CourseListRow textFirstCell="Available courses" isHeader={true}  />
-                
+
+                <CourseListRow textFirstCell="Available courses" isHeader={true} />
                 <CourseListRow
                     textFirstCell="Course name"
                     textSecondCell="Credit"

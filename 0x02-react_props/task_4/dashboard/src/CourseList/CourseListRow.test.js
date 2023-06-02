@@ -45,4 +45,4 @@ describe('CourseListRow', () => {
     expect(tdElements.at(0).text()).toEqual('Value 1');
     expect(tdElements.at(1).text()).toEqual('Value 2');
   });
-});
+})

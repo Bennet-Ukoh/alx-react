@@ -1,0 +1,12 @@
+.Notifications {
+    padding: 4px;
+    border: 1px dashed red;
+}
+
+.Notifications li[data-notification-type="default"] {
+    color: blue;
+  }
+  
+  .Notifications li {
+    color: red;
+  }

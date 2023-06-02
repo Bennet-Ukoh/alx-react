@@ -11,4 +11,4 @@ describe('CourseList', () => {
     const rows = wrapper.find('CourseListRow');
     expect(rows).toHaveLength(5);
   })
-})
+});
