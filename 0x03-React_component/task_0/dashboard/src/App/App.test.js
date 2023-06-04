@@ -41,5 +41,24 @@ describe('App', () => {
     it('renders the CourseList component', () => {
       expect(wrapper.find('CourseList')).toHaveLength(1);
     });
+
+    it('calls logOut and displays the console message when Ctrl+H is pressed', () => {
+      // Mock the logOut function
+      const mockLogOut = jest.fn();
+      wrapper.setProps({ logOut: mockLogOut });
+
+      // Spy on the global console.log function
+      global.console.log = jest.fn();
+
+      // Simulate the keydown event with Ctrl+H
+      const event = { ctrlKey: true, key: 'h' };
+      wrapper.instance().handleKeyDown(event);
+
+      // Check if logOut was called
+      expect(mockLogOut).toHaveBeenCalled();
+
+      // Check if console.log was called with the correct message
+      expect(global.console.log).toHaveBeenCalledWith('Logging you out');
+    });
   });
 });

@@ -32,7 +32,10 @@ describe('Notifications', () => {
     wrapper.setProps({ displayDrawer: true, listNotifications: [] });
     expect(wrapper.find('.Notifications').text()).toContain('No new notification for now');
 
-   
-
+    // Test 6: Calls markAsRead function with the right message
+    const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    wrapper.instance().markAsRead(1);
+    expect(consoleSpy).toHaveBeenCalledWith('Notification 1 has been marked as read');
+    consoleSpy.mockRestore();
   });
 });
