@@ -10,7 +10,7 @@ const BodySection = ({ title, children }) => {
   )
 }
 
-BodySection.PropTypes = {
+BodySection.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node,
 }

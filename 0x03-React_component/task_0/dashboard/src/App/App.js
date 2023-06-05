@@ -5,7 +5,9 @@ import Login from "../Login/Login";
 import Footer from "../../src/Footer/Footer";
 import PropTypes from 'prop-types';
 import CourseList from "../CourseList/CourseList";
-import {getLatestNotification} from '../../utils/utils';
+import { getLatestNotification } from '../../utils/utils';
+import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
+import BodySection from "../BodySection/BodySection";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,10 +35,10 @@ class App extends React.Component {
   }
 
   handleKeyDown = (event) => {
-     if (event.ctrlKey && event.key === 'h') {
+    if (event.ctrlKey && event.key === 'h') {
       console.log('Logging you out')
       this.props.logOut()
-     }
+    }
   }
 
   render() {
@@ -47,7 +49,20 @@ class App extends React.Component {
         <div className="App">
           <Notifications displayDrawer={isLoggedIn} listNotifications={this.listNotifications} />
           <Header />
-          {isLoggedIn ? <CourseList listCourses={this.listCourses} /> : <Login />}
+          {isLoggedIn ? (
+            <BodySectionWithMarginBottom title="Course list">
+              <CourseList listCourses={this.listCourses} />
+            </BodySectionWithMarginBottom>
+          ) : (
+            <BodySectionWithMarginBottom title="Log in to continue">
+              <Login />
+            </BodySectionWithMarginBottom>
+          )}
+          <BodySection title="News from the School">
+            <p>Holberton School is the best online learning platform.
+              Here you can learn with beers online just as you would do in a comtempory class.
+            </p>
+          </BodySection>
           <div className="App-footer">
             <Footer />
           </div>
@@ -63,8 +78,8 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  isLoggedIn: true,
-  logOut: () => {},
+  isLoggedIn: false,
+  logOut: () => { },
 };
 
 export default App;
