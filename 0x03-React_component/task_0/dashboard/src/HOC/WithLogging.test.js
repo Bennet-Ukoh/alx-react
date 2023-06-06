@@ -39,4 +39,4 @@ describe('WithLogging', () => {
     wrapper.unmount();
     expect(consoleLogSpy).toHaveBeenCalledWith('Component Login is going to unmount');
   });
-});
+})

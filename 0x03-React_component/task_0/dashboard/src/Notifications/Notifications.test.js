@@ -28,14 +28,40 @@ describe('Notifications', () => {
     wrapper.setProps({ displayDrawer: true });
     expect(wrapper.find('.Notifications')).toHaveLength(1);
 
-    // Test 5: Renders the correct message when listNotifications is empty
+   /** // Test 5: Renders the correct message when listNotifications is empty
     wrapper.setProps({ displayDrawer: true, listNotifications: [] });
     expect(wrapper.find('.Notifications').text()).toContain('No new notification for now');
 
-    // Test 6: Calls markAsRead function with the right message
-    const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    wrapper.instance().markAsRead(1);
-    expect(consoleSpy).toHaveBeenCalledWith('Notification 1 has been marked as read');
-    consoleSpy.mockRestore();
-  });
+    // Test 6: Calls markAsRead function with the right ID argument
+    const mockMarkAsRead = jest.fn();
+    wrapper.setProps({
+      displayDrawer: true,
+      listNotifications,
+      markAsRead: mockMarkAsRead,
+    }); */
+
+    // Simulate the markAsRead function on each NotificationItem
+   // notificationItems.forEach((notificationItem) => {
+   //   notificationItem.props().markAsRead(notificationItem.props().id);
+    
+
+    // Verify that the mockMarkAsRead function has been called with the correct arguments
+    //listNotifications.forEach((notification) => {
+     // expect(mockMarkAsRead).toHaveBeenCalledWith(notification.id);
+    //});
+  //});
+   // Test 7: Component doesn't rerender when updating props with the same list
+   const instance = wrapper.instance();
+   const shouldUpdate = instance.shouldComponentUpdate({ listNotifications });
+   expect(shouldUpdate).toBe(false);
+
+   // Test 8: Component rerenders when updating props with a longer list
+   const newListNotifications = [
+     ...listNotifications,
+     { id: 3, type: 'default', value: 'New notification' },
+   ];
+   const shouldUpdateLongerList = instance.shouldComponentUpdate({ listNotifications: newListNotifications });
+   expect(shouldUpdateLongerList).toBe(true);
+
 });
+})

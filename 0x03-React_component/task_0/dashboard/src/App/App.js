@@ -47,7 +47,7 @@ class App extends React.Component {
     return (
       <>
         <div className="App">
-          <Notifications displayDrawer={isLoggedIn} listNotifications={this.listNotifications} />
+          <Notifications displayDrawer={isLoggedIn} listNotifications={[]} />
           <Header />
           {isLoggedIn ? (
             <BodySectionWithMarginBottom title="Course list">
@@ -78,7 +78,7 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   logOut: () => { },
 };
 
