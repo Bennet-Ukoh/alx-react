@@ -59,8 +59,9 @@ class App extends React.Component {
             </BodySectionWithMarginBottom>
           )}
           <BodySection title="News from the School">
-            <p>Holberton School is the best online learning platform.
-              Here you can learn with beers online just as you would do in a comtempory class.
+            <p>Holberton School is a Computer Science school founded in Silicon Valley to address the gap in the education system for aspiring software engineers.
+
+After Holberton School opened its doors in 2016, the world’s most innovative companies have noticed. Graduates have found jobs at LinkedIn, Google, Tesla, Docker, Apple, Dropbox, Facebook, Pinterest, Genentech, Cisco, IBM, and more.
             </p>
           </BodySection>
           <div className="App-footer">
