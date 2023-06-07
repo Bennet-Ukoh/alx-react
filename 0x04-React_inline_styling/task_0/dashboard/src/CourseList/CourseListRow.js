@@ -3,24 +3,20 @@ import PropTypes from 'prop-types';
 
 const CourseListRow = ({ isHeader = false, textFirstCell, textSecondCell = null }) => {
   
-  const headerRowStyle = {
-    backgroundColor: isHeader ? '#deb5b545' : '',
-  }
-
-  const dataRowStyle = {
-    backgroundColor: isHeader ? '' : '#f5f5f5ab'
-  }
+  const rowStyle = {
+    backgroundColor: isHeader ? '#deb5b545' : '#f5f5f5ab',
+  };
 
   if (isHeader) {
     if (textSecondCell === null) {
       return (
-        <tr style={headerRowStyle}>
+        <tr style={rowStyle}>
           <th colSpan={2} >{textFirstCell}</th>
         </tr>
       );
     } else {
       return (
-        <tr style={headerRowStyle}>
+        <tr style={rowStyle}>
           <th>{textFirstCell}</th>
           <th>{textSecondCell}</th>
         </tr>
@@ -28,7 +24,7 @@ const CourseListRow = ({ isHeader = false, textFirstCell, textSecondCell = null 
     }
   } else {
     return (
-      <tr style={dataRowStyle}>
+      <tr style={rowStyle}>
         <td>{textFirstCell}</td>
         <td>{textSecondCell}</td>
       </tr>

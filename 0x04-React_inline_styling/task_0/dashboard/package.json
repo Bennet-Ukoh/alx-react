@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
-    "test": "react-scripts test && jest", 
+    "test": "react-scripts test && jest",
     "test-watch": "jest --watch"
   },
   "keywords": [],
@@ -30,6 +30,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "aphrodite": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
