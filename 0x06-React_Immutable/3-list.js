@@ -1,13 +1,13 @@
 import { List } from 'immutable';
 
-export function getListObject(array: any[]): List<any> {
+export function getListObject(array) {
   // Convert the plain array to an immutable List
-  const immutableList: List<any> = List(array);
+  const immutableList = List(array);
   return immutableList;
 }
 
-export function addElementToList(list: List<any>, element: string): List<any> {
+export function addElementToList(list, element) {
   // Append the string element to the List
-  const updatedList: List<any> = list.push(element);
+  const updatedList = list.push(element);
   return updatedList;
 }
