@@ -15,5 +15,3 @@ export const map2 = map.withMutations((mutableMap) => {
   mutableMap.setIn(['2'], 'Benjamin'); // Modifying the value at index 2 to 'Benjamin'
   mutableMap.setIn(['4'], 'Oliver');   // Modifying the value at index 4 to 'Oliver'
 });
-
-export { map, map2 };
