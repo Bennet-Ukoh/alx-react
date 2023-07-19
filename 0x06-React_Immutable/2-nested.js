@@ -1,16 +1,20 @@
+import { fromJS, Map } from 'immutable';
+
 export default function accessImmutableObject(object, array) {
-  let result = object;
+  // Convert the plain object to an immutable Map object
+  const immutableObject = fromJS(object);
 
-  // Traverse the object using the elements of the array (path)
-  for (const key of array) {
-    // Check if the current key exists in the result object
-    if (result.hasOwnProperty(key)) {
-      result = result[key];
-    } else {
-      // If the key is not found, return undefined
-      return undefined;
-    }
+  try {
+    // Use the getIn method to access the value at the specified path
+    const result = immutableObject.getIn(array);
+
+    // Return the value if found
+    return result;
+  } catch (error) {
+    // Handle the error (e.g., path not found)
+    console.error('Error accessing path:', error.message);
+
+    // Return undefined or any default value based on your use case
+    return undefined;
   }
-
-  return result;
 }
