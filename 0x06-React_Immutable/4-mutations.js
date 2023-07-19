@@ -1,4 +1,4 @@
-import { fromJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
 
 // Create the initial Immutable Map
 export const map = fromJS({
@@ -11,8 +11,9 @@ export const map = fromJS({
 });
 
 // Create map2 by modifying the values of map
-export const map2 = map
-  .setIn(['2'], 'Benjamin')
-  .setIn(['4'], 'Oliver');
+export const map2 = map.withMutations((mutableMap) => {
+  mutableMap.setIn(['2'], 'Benjamin'); // Modifying the value at index 2 to 'Benjamin'
+  mutableMap.setIn(['4'], 'Oliver');   // Modifying the value at index 4 to 'Oliver'
+});
 
 // The map and map2 constants are now Immutable Maps with the desired values
