@@ -1,10 +1,10 @@
-import { Map, List, fromJS } from 'immutable';
+import { Map, List } from 'immutable';
 
 // Function to merge deeply nested objects
 export function mergeDeeplyElements(page1, page2) {
   // Convert the objects to Immutable Maps
-  const map1 = fromJS(page1);
-  const map2 = fromJS(page2);
+  const map1 = Map(page1);
+  const map2 = Map(page2);
 
   // Merge the two Maps deeply, with page2 values taking precedence and combining duplicate values
   const mergedMap = map1.mergeDeep(map2);
